@@ -11,7 +11,7 @@ export default defineConfig({
       remotes: {
         welcome: "http://localhost:5002/assets/remoteEntry.js",
         clients: "http://localhost:5001/assets/remoteEntry.js",
-        selected: "http://localhost:5003/assets/remoteEntry.js",
+        selectedClients: "http://localhost:5003/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),
