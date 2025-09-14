@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export default defineConfig({
   plugins: [
@@ -8,12 +10,9 @@ export default defineConfig({
     federation({
       name: "host-app",
       remotes: {
-        welcome:
-          "https://teddy-test-front-end-pleno-mf-welco.vercel.app/assets/remoteEntry.js",
-        // clients:
-        //   "https://teddy-test-front-end-pleno-mf-clien.vercel.app/assets/remoteEntry.js",
-        // selected:
-        //   "https://teddy-test-front-end-pleno-mf-selec.vercel.app/assets/remoteEntry.js",
+        welcome: process.env.VITE_WELCOME_URL || "",
+        clients: process.env.VITE_CLIENTS_URL || "",
+        selectedClients: process.env.VITE_SELECTED_CLIENTS_URL || "",
       },
       shared: ["react", "react-dom"],
     }),
