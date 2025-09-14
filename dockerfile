@@ -1,5 +1,5 @@
 # Etapa 1 - build
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,11 @@ RUN npm run build
 # Etapa 2 - servir os arquivos estáticos
 FROM nginx:alpine
 
+# Copia os arquivos do build
 COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copia a configuração customizada do Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
