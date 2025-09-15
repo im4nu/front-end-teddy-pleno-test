@@ -13,6 +13,7 @@ export default defineConfig({
         welcome: process.env.VITE_WELCOME_URL || "",
         clients: process.env.VITE_CLIENTS_URL || "",
         selectedClients: process.env.VITE_SELECTED_CLIENTS_URL || "",
+        ui: process.env.VITE_UI_URL || "",
       },
       shared: ["react", "react-dom"],
     }),
