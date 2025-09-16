@@ -148,7 +148,7 @@ docker run -d -p 5000:80 --name app-host app-host
 * **Remover imagem**
 
   ```bash
-  docker rmi <nome-da-im
+  docker rmi <nome-da-imagem>
   ```
 
 ## 🚀 Resultado final
