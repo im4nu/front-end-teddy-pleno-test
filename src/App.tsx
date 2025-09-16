@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from "ui/Sidebar";
 import Header from "ui/Header";
+import Spinner from "ui/Spinner";
 
 const WelcomeApp = React.lazy(() => import("welcome/WelcomeApp"));
 const ClientsApp = React.lazy(() => import("clients/ClientsApp"));
@@ -17,7 +18,13 @@ function App() {
       {showSidebarAndHeader && <Sidebar />}
       <div className="flex-1 flex flex-col min-h-screen">
         {showSidebarAndHeader && <Header />}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="flex w-full h-full items-center justify-center">
+              <Spinner />
+            </div>
+          }
+        >
           <Routes>
             <Route path="/" element={<WelcomeApp />} />
             <Route path="/clients" element={<ClientsApp />} />

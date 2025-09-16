@@ -1,3 +1,13 @@
+// Spinner
+declare module "ui/Spinner" {
+  import * as React from "react";
+  export interface SpinnerProps {
+    className?: string;
+  }
+  const Spinner: React.FC<SpinnerProps>;
+  export default Spinner;
+}
+
 // Checkbox (shadcnui)
 declare module "ui/Checkbox" {
   import * as React from "react";
