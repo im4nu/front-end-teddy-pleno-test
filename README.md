@@ -95,6 +95,7 @@ Exemplo:
 docker build -t mf-welcome .
 docker build -t mf-clients .
 docker build -t mf-selected-clients .
+docker build -t mf-ui .
 docker build -t app-host .
 ```
 
@@ -114,6 +115,7 @@ Exemplos:
 docker run -d -p 5002:80 --name mf-welcome mf-welcome
 docker run -d -p 5001:80 --name mf-clients mf-clients
 docker run -d -p 5003:80 --name mf-selected-clients mf-selected-clients
+docker run -d -p 5004:80 --name mf-ui mf-ui
 docker run -d -p 5000:80 --name app-host app-host
 ```
 
